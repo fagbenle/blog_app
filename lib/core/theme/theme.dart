@@ -3,30 +3,23 @@ import 'package:flutter/material.dart';
 import 'app_pallete.dart';
 
 class AppTheme {
+  static _border([Color color = AppPallete.borderColor]) => OutlineInputBorder(
+    borderSide: BorderSide(color: color, width: 3.0),
+    borderRadius: BorderRadius.circular(10.0),
+  );
   static final darkThememode = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppPallete.backgroundColor,
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppPallete.backgroundColor,
-      elevation: 0,
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: const EdgeInsets.all(27.0),
+      // filled: true,
+      // fillColor: AppPallete.borderColor,
+      // border: OutlineInputBorder(
+      //   borderRadius: BorderRadius.circular(8.0),
+      //   borderSide: BorderSide.none,
+      // ),
+      focusedBorder: _border(AppPallete.gradient2),
+      enabledBorder: _border(),
     ),
-    // textTheme: const TextTheme(
-    //   bodyMedium: TextStyle(color: Colors.white),
-    // ),
-    // inputDecorationTheme: InputDecorationTheme(
-    //   filled: true,
-    //   fillColor: const Color.fromRGBO(52, 51, 67, 1),
-    //   border: OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(8.0),
-    //     borderSide: BorderSide.none,
-    //   ),
-    //   focusedBorder: OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(8.0),
-    //     borderSide: BorderSide.none,
-    //   ),
-    //   enabledBorder: OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(8.0),
-    //     borderSide: BorderSide.none,
-    //   ),
-    // ),
   );
 }
+ 
